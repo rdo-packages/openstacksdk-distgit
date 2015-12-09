@@ -1,0 +1,184 @@
+%if 0%{?fedora} >= 24
+%global with_python3 1
+%endif
+
+# Disable docs while openstackdocstheme is packaged
+%global with_doc 0
+
+# Disable running tests while funcsig is packaged
+%global with_tests 0
+
+%global pypi_name openstacksdk
+
+Name:           python-%{pypi_name}
+Version:        XXX
+Release:        XXX
+Summary:        An SDK for building applications to work with OpenStack
+
+License:        ASL 2.0
+URL:            http://www.openstack.org/
+Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+BuildArch:      noarch
+
+
+%description
+A collection of libraries for building applications to work with OpenStack
+clouds.
+
+%package -n python2-%{pypi_name}
+Summary:        An SDK for building applications to work with OpenStack
+%{?python_provide:%python_provide python2-%{pypi_name}}
+
+BuildRequires:  python2-devel
+BuildRequires:  python-pbr >= 1.8
+BuildRequires:  python-sphinx
+BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-requests
+BuildRequires:  python-keystoneauth1
+BuildRequires:  python-oslo-utils
+BuildRequires:  python-os-client-config
+# Test requirements
+BuildRequires:  python-coverage
+BuildRequires:  python-subunit
+BuildRequires:  python-os-testr
+BuildRequires:  python-mock
+BuildRequires:  python-testrepository
+BuildRequires:  python-testscenarios
+BuildRequires:  python-testtools
+
+Requires:       python-keystoneauth1
+Requires:       python-os-client-config
+Requires:       python-oslo-utils
+Requires:       python-six
+Requires:       python-stevedore
+
+%description -n python2-%{pypi_name}
+A collection of libraries for building applications to work with OpenStack
+clouds.
+
+%package -n python2-%{pypi_name}-tests
+Summary:        An SDK for building applications to work with OpenStack - test files
+
+Requires: python2-%{pypi_name} = %{version}-%{release}
+
+%description -n python2-%{pypi_name}-tests
+A collection of libraries for building applications to work with OpenStack
+clouds - test files
+
+
+%if 0%{?with_python3}
+%package -n python3-%{pypi_name}
+Summary:        An SDK for building applications to work with OpenStack
+%{?python_provide:%python_provide python3-%{pypi_name}}
+ 
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr >= 1.8
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-oslo-sphinx
+BuildRequires:  python3-requests
+BuildRequires:  python3-keystoneauth1
+BuildRequires:  python3-oslo-utils
+BuildRequires:  python3-os-client-config
+# Test requirements
+BuildRequires:  python3-coverage
+BuildRequires:  python3-subunit
+BuildRequires:  python3-os-testr
+BuildRequires:  python3-mock
+BuildRequires:  python3-testrepository
+BuildRequires:  python3-testscenarios
+BuildRequires:  python3-testtools
+
+Requires:       python3-keystoneauth1
+Requires:       python3-os-client-config
+Requires:       python3-oslo-utils
+Requires:       python3-six
+Requires:       python3-stevedore
+
+%description -n python3-%{pypi_name}
+A collection of libraries for building applications to work with OpenStack
+clouds.
+
+%package -n python3-%{pypi_name}-tests
+Summary:        An SDK for building applications to work with OpenStack - test files
+
+Requires: python3-%{pypi_name} = %{version}-%{release}
+
+%description -n python3-%{pypi_name}-tests
+A collection of libraries for building applications to work with OpenStack
+clouds - test files
+
+%endif
+
+
+%if 0%{?with_doc}
+%package -n python-%{pypi_name}-doc
+Summary:        An SDK for building applications to work with OpenStack - documentation
+
+%description -n python-%{pypi_name}-doc
+A collection of libraries for building applications to work with OpenStack
+clouds - documentation.
+%endif
+
+%prep
+%autosetup -n %{pypi_name}-%{upstream_version}
+
+%build
+%py2_build
+
+%if 0%{?with_python3}
+%{py3_build}
+%endif
+
+%if 0%{?with_doc}
+# generate html docs 
+sphinx-build -b html doc/source html
+# remove the sphinx-build leftovers
+rm -rf html/.{doctrees,buildinfo}
+%endif
+
+%install
+%py2_install
+
+%if 0%{?with_python3}
+%{py3_install}
+%endif
+
+%if 0%{?with_tests}
+%check
+%{__python2} setup.py test
+
+%if 0%{?with_python3}
+rm -rf .testrepository
+%{__python3} setup.py test
+%endif
+%endif
+
+%files -n python2-%{pypi_name}
+%doc README.rst
+%license LICENSE
+%{python2_sitelib}/openstack
+%{python2_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{python2_sitelib}/openstack/tests
+
+%files -n python2-%{pypi_name}-tests
+%{python2_sitelib}/openstack/tests
+
+%if 0%{?with_doc}
+%files -n python-%{pypi_name}-doc
+%doc html
+%license LICENSE
+%endif
+
+%if 0%{?with_python3}
+%files -n python3-%{pypi_name}
+%doc README.rst
+%license LICENSE
+%{python3_sitelib}/openstack
+%{python3_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{python3_sitelib}/openstack/tests
+
+%files -n python3-%{pypi_name}-tests
+%{python3_sitelib}/openstack/tests
+%endif
+
+%changelog
