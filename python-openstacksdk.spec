@@ -5,9 +5,6 @@
 # Disable docs while openstackdocstheme is packaged
 %global with_doc 0
 
-# Disable running tests while funcsig is packaged
-%global with_tests 0
-
 %global pypi_name openstacksdk
 
 Name:           python-%{pypi_name}
@@ -143,7 +140,7 @@ rm -rf html/.{doctrees,buildinfo}
 %{py3_install}
 %endif
 
-%if 0%{?with_tests}
+
 %check
 %{__python2} setup.py test
 
@@ -151,7 +148,7 @@ rm -rf html/.{doctrees,buildinfo}
 rm -rf .testrepository
 %{__python3} setup.py test
 %endif
-%endif
+
 
 %files -n python2-%{pypi_name}
 %doc README.rst
