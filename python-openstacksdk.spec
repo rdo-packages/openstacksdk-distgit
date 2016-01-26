@@ -36,6 +36,7 @@ BuildRequires:  python-oslo-utils
 BuildRequires:  python-os-client-config
 # Test requirements
 BuildRequires:  python-coverage
+BuildRequires:  python-iso8601 >= 0.1.11
 BuildRequires:  python-subunit
 BuildRequires:  python-os-testr
 BuildRequires:  python-mock
@@ -43,6 +44,7 @@ BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
 
+Requires:       python-iso8601 >= 0.1.11
 Requires:       python-keystoneauth1
 Requires:       python-os-client-config
 Requires:       python-oslo-utils
