@@ -7,14 +7,17 @@
 
 %global pypi_name openstacksdk
 
+
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.8.2
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
 URL:            http://www.openstack.org/
-Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}%{?milestone}.tar.gz
 BuildArch:      noarch
 
 
@@ -181,3 +184,5 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Thu Mar 24 2016 RDO <rdo-list@redhat.com> 0.8.2-0.1
+- RC1 Rebuild for Mitaka RC1 0.8.2
