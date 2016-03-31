@@ -11,7 +11,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
-Version:        0.8.2
+Version:        0.8.3
 Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
@@ -184,5 +184,8 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Thu Mar 31 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.8.3-1
+- Update to 0.8.3
+
 * Thu Mar 24 2016 RDO <rdo-list@redhat.com> 0.8.2-0.1
 - RC1 Rebuild for Mitaka RC1 0.8.2
