@@ -9,8 +9,8 @@
 %global pypi_name openstacksdk
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.5
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
@@ -182,3 +182,6 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Mon Sep 12 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.9.5-1
+- Update to 0.9.5
+
