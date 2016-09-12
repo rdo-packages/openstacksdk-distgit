@@ -1,3 +1,4 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %if 0%{?fedora} >= 24
 %global with_python3 1
 %endif
@@ -14,7 +15,7 @@ Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
 URL:            http://www.openstack.org/
-Source0:        https://pypi.io/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://pypi.io/packages/source/o/%{pypi_name}/%{pypi_name}-%{upstram_version}.tar.gz
 BuildArch:      noarch
 
 
