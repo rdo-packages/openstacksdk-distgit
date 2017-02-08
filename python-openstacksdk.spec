@@ -9,8 +9,8 @@
 %global pypi_name openstacksdk
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.13
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
@@ -182,3 +182,6 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 0.9.13-1
+- Update to 0.9.13
+
