@@ -182,3 +182,4 @@ rm -rf .testrepository
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-openstacksdk/commit/?id=455fb78d67ad4405a6ff032c47bac75471fa475a
