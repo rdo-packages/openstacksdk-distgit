@@ -37,6 +37,7 @@ BuildRequires:  python-oslo-utils
 BuildRequires:  python-os-client-config
 # Test requirements
 BuildRequires:  python-coverage
+BuildRequires:  python-deprecation
 BuildRequires:  python-iso8601 >= 0.1.11
 BuildRequires:  python-subunit
 BuildRequires:  python-os-testr
@@ -45,6 +46,7 @@ BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
 
+Requires:       python-deprecation
 Requires:       python-iso8601 >= 0.1.11
 Requires:       python-keystoneauth1
 Requires:       python-os-client-config
@@ -81,6 +83,7 @@ BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-os-client-config
 # Test requirements
 BuildRequires:  python3-coverage
+BuildRequires:  python3-deprecation
 BuildRequires:  python3-subunit
 BuildRequires:  python3-os-testr
 BuildRequires:  python3-mock
@@ -88,6 +91,7 @@ BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 
+Requires:       python3-deprecation
 Requires:       python3-keystoneauth1
 Requires:       python3-os-client-config
 Requires:       python3-oslo-utils
