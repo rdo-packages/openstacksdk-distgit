@@ -39,6 +39,7 @@ BuildRequires:  python-os-client-config
 BuildRequires:  python-coverage
 BuildRequires:  python-deprecation
 BuildRequires:  python-iso8601 >= 0.1.11
+BuildRequires:  python-jsonpatch >= 1.1
 BuildRequires:  python-subunit
 BuildRequires:  python-os-testr
 BuildRequires:  python-mock
@@ -48,6 +49,7 @@ BuildRequires:  python-testtools
 
 Requires:       python-deprecation
 Requires:       python-iso8601 >= 0.1.11
+Requires:       python-jsonpatch >= 1.1
 Requires:       python-keystoneauth1
 Requires:       python-os-client-config
 Requires:       python-oslo-utils
@@ -84,6 +86,8 @@ BuildRequires:  python3-os-client-config
 # Test requirements
 BuildRequires:  python3-coverage
 BuildRequires:  python3-deprecation
+BuildRequires:  python3-iso8601 >= 0.1.11
+BuildRequires:  python3-jsonpatch >= 1.1
 BuildRequires:  python3-subunit
 BuildRequires:  python3-os-testr
 BuildRequires:  python3-mock
@@ -92,6 +96,8 @@ BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 
 Requires:       python3-deprecation
+Requires:       python3-iso8601 >= 0.1.11
+Requires:       python3-jsonpatch >= 1.1
 Requires:       python3-keystoneauth1
 Requires:       python3-os-client-config
 Requires:       python3-oslo-utils
@@ -186,3 +192,4 @@ rm -rf .testrepository
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-openstacksdk/commit/?id=c8f5194fdcecc913b4ee83d97654fb233dc617da
