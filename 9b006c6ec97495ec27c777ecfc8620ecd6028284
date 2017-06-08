@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_aec31289",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-06-08T07:37:10Z",
+      "side": 1,
+      "message": "Typo: should be jsonpatch",
+      "range": {
+        "startLine": 51,
+        "startChar": 27,
+        "endLine": 52,
+        "endChar": 30
+      },
+      "revId": "9b006c6ec97495ec27c777ecfc8620ecd6028284",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_cec0567f",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-06-08T07:37:10Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "9b006c6ec97495ec27c777ecfc8620ecd6028284",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
