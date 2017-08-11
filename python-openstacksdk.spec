@@ -36,7 +36,6 @@ BuildRequires:  python-keystoneauth1
 BuildRequires:  python-oslo-utils
 BuildRequires:  python-os-client-config
 # Test requirements
-BuildRequires:  python-coverage
 BuildRequires:  python-deprecation
 BuildRequires:  python-iso8601 >= 0.1.11
 BuildRequires:  python-jsonpatch >= 1.1
@@ -84,7 +83,6 @@ BuildRequires:  python3-keystoneauth1
 BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-os-client-config
 # Test requirements
-BuildRequires:  python3-coverage
 BuildRequires:  python3-deprecation
 BuildRequires:  python3-iso8601 >= 0.1.11
 BuildRequires:  python3-jsonpatch >= 1.1
