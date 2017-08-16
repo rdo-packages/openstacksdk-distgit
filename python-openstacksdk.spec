@@ -28,12 +28,11 @@ Summary:        An SDK for building applications to work with OpenStack
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr >= 1.8
+BuildRequires:  python-pbr >= 2.0.0
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-requests
 BuildRequires:  python-keystoneauth1
-BuildRequires:  python-oslo-utils
 BuildRequires:  python-os-client-config
 # Test requirements
 BuildRequires:  python-deprecation
@@ -47,13 +46,12 @@ BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
 
 Requires:       python-deprecation
-Requires:       python-iso8601 >= 0.1.11
 Requires:       python-jsonpatch >= 1.1
-Requires:       python-keystoneauth1
-Requires:       python-os-client-config
-Requires:       python-oslo-utils
+Requires:       python-keystoneauth1 >= 3.1.0
+Requires:       python-os-client-config >= 1.28.0
 Requires:       python-six
 Requires:       python-stevedore
+Requires:       python-pbr >= 2.0.0
 
 %description -n python2-%{pypi_name}
 A collection of libraries for building applications to work with OpenStack
@@ -73,14 +71,13 @@ clouds - test files
 %package -n python3-%{pypi_name}
 Summary:        An SDK for building applications to work with OpenStack
 %{?python_provide:%python_provide python3-%{pypi_name}}
- 
+
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr >= 1.8
+BuildRequires:  python3-pbr >= 2.0.0
 BuildRequires:  python3-sphinx
 BuildRequires:  python3-oslo-sphinx
 BuildRequires:  python3-requests
 BuildRequires:  python3-keystoneauth1
-BuildRequires:  python3-oslo-utils
 BuildRequires:  python3-os-client-config
 # Test requirements
 BuildRequires:  python3-deprecation
@@ -94,13 +91,12 @@ BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 
 Requires:       python3-deprecation
-Requires:       python3-iso8601 >= 0.1.11
 Requires:       python3-jsonpatch >= 1.1
-Requires:       python3-keystoneauth1
-Requires:       python3-os-client-config
-Requires:       python3-oslo-utils
+Requires:       python3-keystoneauth1 >= 3.1.0
+Requires:       python3-os-client-config >= 1.28.0
 Requires:       python3-six
 Requires:       python3-stevedore
+Requires:       python3-pbr >= 2.0.0
 
 %description -n python3-%{pypi_name}
 A collection of libraries for building applications to work with OpenStack
