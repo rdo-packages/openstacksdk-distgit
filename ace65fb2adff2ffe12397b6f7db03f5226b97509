@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_955816fc",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-16T14:44:50Z",
+      "side": 1,
+      "message": "For consistency, enforce version for python3 also.",
+      "revId": "ace65fb2adff2ffe12397b6f7db03f5226b97509",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
