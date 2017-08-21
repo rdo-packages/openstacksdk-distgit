@@ -9,8 +9,8 @@
 %global pypi_name openstacksdk
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.9.17
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
@@ -186,4 +186,6 @@ rm -rf .testrepository
 %endif
 
 %changelog
-# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-openstacksdk/commit/?id=c8f5194fdcecc913b4ee83d97654fb233dc617da
+* Mon Aug 21 2017 Alfredo Moralejo <amoralej@redhat.com> 0.9.17-1
+- Update to 0.9.17
+
