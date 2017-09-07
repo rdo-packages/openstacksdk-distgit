@@ -8,6 +8,14 @@
 
 %global pypi_name openstacksdk
 
+%global common_desc \
+A collection of libraries for building applications to work with OpenStack \
+clouds.
+
+%global common_desc_tests \
+A collection of libraries for building applications to work with OpenStack \
+clouds - test files
+
 Name:           python-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -20,8 +28,7 @@ BuildArch:      noarch
 
 
 %description
-A collection of libraries for building applications to work with OpenStack
-clouds.
+%{common_desc}
 
 %package -n python2-%{pypi_name}
 Summary:        An SDK for building applications to work with OpenStack
@@ -54,8 +61,7 @@ Requires:       python-stevedore
 Requires:       python-pbr >= 2.0.0
 
 %description -n python2-%{pypi_name}
-A collection of libraries for building applications to work with OpenStack
-clouds.
+%{common_desc}
 
 %package -n python2-%{pypi_name}-tests
 Summary:        An SDK for building applications to work with OpenStack - test files
@@ -63,9 +69,7 @@ Summary:        An SDK for building applications to work with OpenStack - test f
 Requires: python2-%{pypi_name} = %{version}-%{release}
 
 %description -n python2-%{pypi_name}-tests
-A collection of libraries for building applications to work with OpenStack
-clouds - test files
-
+%{common_desc_tests}
 
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
@@ -99,8 +103,7 @@ Requires:       python3-stevedore
 Requires:       python3-pbr >= 2.0.0
 
 %description -n python3-%{pypi_name}
-A collection of libraries for building applications to work with OpenStack
-clouds.
+%{common_desc}
 
 %package -n python3-%{pypi_name}-tests
 Summary:        An SDK for building applications to work with OpenStack - test files
@@ -108,8 +111,7 @@ Summary:        An SDK for building applications to work with OpenStack - test f
 Requires: python3-%{pypi_name} = %{version}-%{release}
 
 %description -n python3-%{pypi_name}-tests
-A collection of libraries for building applications to work with OpenStack
-clouds - test files
+%{common_desc_tests}
 
 %endif
 
