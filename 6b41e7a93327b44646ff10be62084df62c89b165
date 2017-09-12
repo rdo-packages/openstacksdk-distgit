@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d561ced4",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-09-12T18:44:16Z",
+      "side": 1,
+      "message": "this line needs moving",
+      "revId": "6b41e7a93327b44646ff10be62084df62c89b165",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f55eca11",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-09-12T18:44:16Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6b41e7a93327b44646ff10be62084df62c89b165",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_159b56ca",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-09-12T18:44:16Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "6b41e7a93327b44646ff10be62084df62c89b165",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
