@@ -9,7 +9,8 @@
 %global pypi_name openstacksdk
 
 %global common_desc \
-A collection of libraries for building applications to work with OpenStack
+A collection of libraries for building applications to work with OpenStack \
+clouds.
 
 Name:           python-%{pypi_name}
 Version:        XXX
@@ -24,7 +25,6 @@ BuildArch:      noarch
 
 %description
 %{common_desc}
-clouds.
 
 %package -n python2-%{pypi_name}
 Summary:        An SDK for building applications to work with OpenStack
@@ -58,7 +58,6 @@ Requires:       python-pbr >= 2.0.0
 
 %description -n python2-%{pypi_name}
 %{common_desc}
-clouds.
 
 %package -n python2-%{pypi_name}-tests
 Summary:        An SDK for building applications to work with OpenStack - test files
@@ -66,7 +65,7 @@ Summary:        An SDK for building applications to work with OpenStack - test f
 Requires: python2-%{pypi_name} = %{version}-%{release}
 
 %description -n python2-%{pypi_name}-tests
-%{common_desc}
+A collection of libraries for building applications to work with OpenStack
 clouds - test files
 
 
@@ -103,7 +102,6 @@ Requires:       python3-pbr >= 2.0.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
-clouds.
 
 %package -n python3-%{pypi_name}-tests
 Summary:        An SDK for building applications to work with OpenStack - test files
@@ -111,7 +109,7 @@ Summary:        An SDK for building applications to work with OpenStack - test f
 Requires: python3-%{pypi_name} = %{version}-%{release}
 
 %description -n python3-%{pypi_name}-tests
-%{common_desc}
+A collection of libraries for building applications to work with OpenStack
 clouds - test files
 
 %endif
@@ -122,7 +120,7 @@ clouds - test files
 Summary:        An SDK for building applications to work with OpenStack - documentation
 
 %description -n python-%{pypi_name}-doc
-%{common_desc}
+A collection of libraries for building applications to work with OpenStack
 clouds - documentation.
 %endif
 
