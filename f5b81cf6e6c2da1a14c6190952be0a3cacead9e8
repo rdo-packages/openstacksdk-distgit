@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_c4691227",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-03T09:38:34Z",
+      "side": 1,
+      "message": "I\u0027d prefer to see this left as common_desc as per other packages and then use common_desc_test or whatever for _additional_ globals",
+      "range": {
+        "startLine": 11,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "f5b81cf6e6c2da1a14c6190952be0a3cacead9e8",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_e448d6ce",
         "filename": "python-openstacksdk.spec",
         "patchSetId": 2
