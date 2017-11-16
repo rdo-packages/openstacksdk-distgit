@@ -41,6 +41,7 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-requests
 BuildRequires:  python-keystoneauth1
 BuildRequires:  python-os-client-config
+BuildRequires:  openstack-macros
 # Test requirements
 BuildRequires:  python-deprecation
 BuildRequires:  python-iso8601 >= 0.1.11
@@ -57,7 +58,7 @@ Requires:       python-jsonpatch >= 1.1
 Requires:       python-keystoneauth1 >= 3.1.0
 Requires:       python-os-client-config >= 1.28.0
 Requires:       python-six
-Requires:       python-stevedore
+Requires:       python-os-service-types
 Requires:       python-pbr >= 2.0.0
 
 %description -n python2-%{pypi_name}
@@ -99,7 +100,7 @@ Requires:       python3-jsonpatch >= 1.1
 Requires:       python3-keystoneauth1 >= 3.1.0
 Requires:       python3-os-client-config >= 1.28.0
 Requires:       python3-six
-Requires:       python3-stevedore
+Requires:       python3-os-service-types
 Requires:       python3-pbr >= 2.0.0
 
 %description -n python3-%{pypi_name}
@@ -127,6 +128,8 @@ clouds - documentation.
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version}
+# Let RPM handle the requirements
+%{py_req_cleanup}
 
 %build
 %py2_build
@@ -162,6 +165,7 @@ rm -rf .testrepository
 %files -n python2-%{pypi_name}
 %doc README.rst
 %license LICENSE
+%{_bindir}/openstack-inventory
 %{python2_sitelib}/openstack
 %{python2_sitelib}/%{pypi_name}-*.egg-info
 %exclude %{python2_sitelib}/openstack/tests
@@ -188,4 +192,3 @@ rm -rf .testrepository
 %endif
 
 %changelog
-# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-openstacksdk/commit/?id=c8f5194fdcecc913b4ee83d97654fb233dc617da
