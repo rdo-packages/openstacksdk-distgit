@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_52f32573",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-11-16T09:13:45Z",
+      "side": 1,
+      "message": "This creates an issue for upstream Fedora builds, where we do not have the openstack-macros package (we have it in RDO Trunk, though).\n\nFor this kind of packages (clients and libraries used by clients) I would not use %py_req_cleanup, but do it manually. What do you think?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 31
+      },
+      "revId": "d0e421c35259d901da6a5d5f214abfa56a964587",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
