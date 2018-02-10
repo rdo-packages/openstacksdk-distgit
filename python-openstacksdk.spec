@@ -36,52 +36,68 @@ Summary:        An SDK for building applications to work with OpenStack
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr >= 2.0.0
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-keystoneauth1
-BuildRequires:  python-appdirs
-BuildRequires:  python-requestsexceptions
-BuildRequires:  python-dogpile-cache
-BuildRequires:  python-munch
-BuildRequires:  python-decorator
-BuildRequires:  python-jmespath
-BuildRequires:  python-ipaddress
-BuildRequires:  python-futures
-BuildRequires:  python-netifaces
-BuildRequires:  python-jsonschema
-BuildRequires:  python-os-service-types
+BuildRequires:  python2-pbr >= 2.0.0
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-keystoneauth1
+BuildRequires:  python2-appdirs
+BuildRequires:  python2-requestsexceptions
+BuildRequires:  python2-munch
+BuildRequires:  python2-jmespath
+BuildRequires:  python2-futures
+BuildRequires:  python2-jsonschema
+BuildRequires:  python2-os-service-types
 # Test requirements
-BuildRequires:  python-deprecation
-BuildRequires:  python-iso8601 >= 0.1.11
-BuildRequires:  python-jsonpatch >= 1.6
-BuildRequires:  python-subunit
-BuildRequires:  python-oslotest
-BuildRequires:  python-stestr
-BuildRequires:  python-mock
+BuildRequires:  python2-deprecation
+BuildRequires:  python2-iso8601 >= 0.1.11
+BuildRequires:  python2-jsonpatch >= 1.6
+BuildRequires:  python2-subunit
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-stestr
+BuildRequires:  python2-mock
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testscenarios
+BuildRequires:  python2-testtools
+BuildRequires:  python2-glanceclient
+%if 0%{?fedora} || 0%{?rhel} > 7
+BuildRequires:  python2-requests-mock
+Requires:       python2-decorator
+Requires:       python2-dogpile-cache
+Requires:       python2-ipaddress
+Requires:       python2-netifaces
+%else
 BuildRequires:  python-requests-mock
-BuildRequires:  python-testrepository
-BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
-BuildRequires:  python-glanceclient
-
-Requires:       python-deprecation
-Requires:       python-jsonpatch >= 1.6
-Requires:       python-keystoneauth1 >= 3.1.0
-Requires:       python-six
-Requires:       python-pbr >= 2.0.0
-Requires:       PyYAML
-Requires:       python-appdirs
-Requires:       python-requestsexceptions
-Requires:       python-dogpile-cache
-Requires:       python-munch
 Requires:       python-decorator
-Requires:       python-jmespath
+Requires:       python-dogpile-cache
 Requires:       python-ipaddress
-Requires:       python-futures
 Requires:       python-netifaces
-Requires:       python-iso8601
-Requires:       python-os-service-types
+%endif
+
+Requires:       python2-deprecation
+Requires:       python2-jsonpatch >= 1.16
+Requires:       python2-keystoneauth1 >= 3.3.0
+Requires:       python2-six
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-appdirs
+Requires:       python2-requestsexceptions >= 1.2.0
+Requires:       python2-munch
+Requires:       python2-jmespath
+Requires:       python2-futures
+Requires:       python2-iso8601
+Requires:       python2-os-service-types >= 1.1.0
+%if 0%{?fedora} || 0%{?rhel} > 7
+Requires:       python2-decorator
+Requires:       python2-dogpile-cache
+Requires:       python2-ipaddress
+Requires:       python2-netifaces
+Requires:       python2-pyyaml
+%else
+Requires:       python-decorator
+Requires:       python-dogpile-cache
+Requires:       python-ipaddress
+Requires:       python-netifaces
+Requires:       PyYAML
+%endif
 
 %description -n python2-%{pypi_name}
 %{common_desc}
@@ -126,13 +142,13 @@ BuildRequires:  python3-testtools
 BuildRequires:  python3-glanceclient
 
 Requires:       python3-deprecation
-Requires:       python3-jsonpatch >= 1.6
-Requires:       python3-keystoneauth1 >= 3.1.0
+Requires:       python3-jsonpatch >= 1.16
+Requires:       python3-keystoneauth1 >= 3.3.0
 Requires:       python3-six
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-PyYAML
 Requires:       python3-appdirs
-Requires:       python3-requestsexceptions
+Requires:       python3-requestsexceptions >= 1.2.0
 Requires:       python3-dogpile-cache
 Requires:       python3-munch
 Requires:       python3-decorator
@@ -140,7 +156,7 @@ Requires:       python3-jmespath
 Requires:       python3-netifaces
 Requires:       python3-jsonschema
 Requires:       python3-iso8601
-Requires:       python3-os-service-types
+Requires:       python3-os-service-types >= 1.1.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
