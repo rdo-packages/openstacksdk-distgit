@@ -201,12 +201,10 @@ rm -rf html/.{doctrees,buildinfo}
 %endif
 
 %install
-%py2_install
-
 %if 0%{?with_python3}
 %{py3_install}
 %endif
-
+%py2_install
 
 %check
 export OS_STDOUT_CAPTURE=true
