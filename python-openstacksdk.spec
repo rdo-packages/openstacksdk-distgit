@@ -209,6 +209,8 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %check
+export OS_STDOUT_CAPTURE=true
+export OS_STDERR_CAPTURE=true
 stestr --test-path ./openstack/tests/unit run
 
 %if 0%{?with_python3}
