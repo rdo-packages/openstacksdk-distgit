@@ -249,3 +249,4 @@ stestr-3 --test-path ./openstack/tests/unit run
 %endif
 
 %changelog
+
