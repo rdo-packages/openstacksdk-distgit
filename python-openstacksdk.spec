@@ -75,7 +75,7 @@ BuildRequires:  python-netifaces
 
 Requires:       python2-deprecation
 Requires:       python2-jsonpatch >= 1.16
-Requires:       python2-keystoneauth1 >= 3.3.0
+Requires:       python2-keystoneauth1 >= 3.8.0
 Requires:       python2-six
 Requires:       python2-pbr >= 2.0.0
 Requires:       python2-appdirs
@@ -84,7 +84,7 @@ Requires:       python2-munch
 Requires:       python2-jmespath
 Requires:       python2-futures
 Requires:       python2-iso8601
-Requires:       python2-os-service-types >= 1.1.0
+Requires:       python2-os-service-types >= 1.2.0
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:       python2-decorator
 Requires:       python2-dogpile-cache
@@ -143,7 +143,7 @@ BuildRequires:  python3-glanceclient
 
 Requires:       python3-deprecation
 Requires:       python3-jsonpatch >= 1.16
-Requires:       python3-keystoneauth1 >= 3.3.0
+Requires:       python3-keystoneauth1 >= 3.8.0
 Requires:       python3-six
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-PyYAML
@@ -156,7 +156,7 @@ Requires:       python3-jmespath
 Requires:       python3-netifaces
 Requires:       python3-jsonschema
 Requires:       python3-iso8601
-Requires:       python3-os-service-types >= 1.1.0
+Requires:       python3-os-service-types >= 1.2.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
