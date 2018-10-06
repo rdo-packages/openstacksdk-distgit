@@ -58,7 +58,6 @@ BuildRequires:  python2-mock
 BuildRequires:  python2-testrepository
 BuildRequires:  python2-testscenarios
 BuildRequires:  python2-testtools
-BuildRequires:  python2-glanceclient
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires:  python2-requests-mock
 BuildRequires:  python2-decorator
@@ -139,7 +138,6 @@ BuildRequires:  python3-requests-mock
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
-BuildRequires:  python3-glanceclient
 
 Requires:       python3-deprecation
 Requires:       python3-jsonpatch >= 1.16
