@@ -249,3 +249,4 @@ stestr-3 --test-path ./openstack/tests/unit run
 
 %changelog
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/openstacksdk/commit/?id=9db8bae0a197c067f065a1991bd573f9d6fffcfd
