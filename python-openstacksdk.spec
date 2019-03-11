@@ -46,9 +46,8 @@ BuildRequires:  python2-futures
 BuildRequires:  python2-jsonschema
 BuildRequires:  python2-os-service-types
 # Test requirements
-BuildRequires:  python2-deprecation
 BuildRequires:  python2-iso8601 >= 0.1.11
-BuildRequires:  python2-jsonpatch >= 1.6
+BuildRequires:  python2-jsonpatch >= 1.16
 BuildRequires:  python2-subunit
 BuildRequires:  python2-oslotest
 BuildRequires:  python2-stestr
@@ -70,9 +69,9 @@ BuildRequires:  python-ipaddress
 BuildRequires:  python-netifaces
 %endif
 
-Requires:       python2-deprecation
+Requires:       python2-cryptography >= 2.1
 Requires:       python2-jsonpatch >= 1.16
-Requires:       python2-keystoneauth1 >= 3.8.0
+Requires:       python2-keystoneauth1 >= 3.13.0
 Requires:       python2-six
 Requires:       python2-pbr >= 2.0.0
 Requires:       python2-appdirs
@@ -125,9 +124,8 @@ BuildRequires:  python3-netifaces
 BuildRequires:  python3-jsonschema
 BuildRequires:  python3-os-service-types
 # Test requirements
-BuildRequires:  python3-deprecation
 BuildRequires:  python3-iso8601 >= 0.1.11
-BuildRequires:  python3-jsonpatch >= 1.6
+BuildRequires:  python3-jsonpatch >= 1.16
 BuildRequires:  python3-subunit
 BuildRequires:  python3-oslotest
 BuildRequires:  python3-stestr
@@ -137,9 +135,9 @@ BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 
-Requires:       python3-deprecation
+Requires:       python3-cryptography >= 2.1
 Requires:       python3-jsonpatch >= 1.16
-Requires:       python3-keystoneauth1 >= 3.8.0
+Requires:       python3-keystoneauth1 >= 3.13.0
 Requires:       python3-six
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-PyYAML
