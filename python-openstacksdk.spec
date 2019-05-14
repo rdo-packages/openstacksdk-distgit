@@ -181,6 +181,8 @@ clouds - documentation.
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Let RPM handle the requirements
 rm -rf {,test-}requirements.txt
+# This unit test requires python-prometheus, which is optional and not needed
+rm -f openstack/tests/unit/test_stats.py
 
 %build
 %py2_build
@@ -206,11 +208,11 @@ rm -rf html/.{doctrees,buildinfo}
 export OS_STDOUT_CAPTURE=true
 export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=10
-stestr --test-path ./openstack/tests/unit run
+PYTHON=python2 stestr --test-path ./openstack/tests/unit run
 
 %if 0%{?with_python3}
 rm -rf .testrepository
-stestr-3 --test-path ./openstack/tests/unit run
+PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run
 %endif
 
 
