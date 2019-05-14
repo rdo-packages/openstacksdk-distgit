@@ -206,11 +206,11 @@ rm -rf html/.{doctrees,buildinfo}
 export OS_STDOUT_CAPTURE=true
 export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=10
-stestr --test-path ./openstack/tests/unit run
+PYTHON=python2 stestr --test-path ./openstack/tests/unit run
 
 %if 0%{?with_python3}
 rm -rf .testrepository
-stestr-3 --test-path ./openstack/tests/unit run
+PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run
 %endif
 
 
