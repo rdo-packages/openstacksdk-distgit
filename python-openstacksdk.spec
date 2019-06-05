@@ -249,3 +249,4 @@ PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --black-regex 'te
 
 %changelog
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/openstacksdk/commit/?id=a5dfa85d4e7ff5bd5a40d37519670392f05ab6fe
