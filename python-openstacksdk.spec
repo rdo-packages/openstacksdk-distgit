@@ -50,6 +50,7 @@ BuildRequires:  python2-iso8601 >= 0.1.11
 BuildRequires:  python2-jsonpatch >= 1.16
 BuildRequires:  python2-subunit
 BuildRequires:  python2-oslotest
+BuildRequires:  python2-oslo-config
 BuildRequires:  python2-stestr
 BuildRequires:  python2-mock
 BuildRequires:  python2-testrepository
@@ -128,6 +129,7 @@ BuildRequires:  python3-iso8601 >= 0.1.11
 BuildRequires:  python3-jsonpatch >= 1.16
 BuildRequires:  python3-subunit
 BuildRequires:  python3-oslotest
+BuildRequires:  python3-oslo-config
 BuildRequires:  python3-stestr
 BuildRequires:  python3-mock
 BuildRequires:  python3-requests-mock
