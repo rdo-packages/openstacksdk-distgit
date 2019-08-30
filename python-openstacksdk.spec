@@ -209,7 +209,7 @@ rm -rf html/.{doctrees,buildinfo}
 %check
 export OS_STDOUT_CAPTURE=true
 export OS_STDERR_CAPTURE=true
-export OS_TEST_TIMEOUT=10
+export OS_TEST_TIMEOUT=20
 # FIXME(jpena) we are skipping some unit tests due to
 # https://storyboard.openstack.org/#!/story/2005677
 PYTHON=python2 stestr --test-path ./openstack/tests/unit run --black-regex 'test_wait_for_task_'
@@ -250,4 +250,3 @@ PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --black-regex 'te
 %endif
 
 %changelog
-
