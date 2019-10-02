@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d722d4de_2da3147c",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-10-02T07:42:20Z",
+      "side": 1,
+      "message": "stestr-%{pyver}",
+      "range": {
+        "startLine": 154,
+        "startChar": 22,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "2e19859b853c6c8bac7332b97f937f7e4f33c6f3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
