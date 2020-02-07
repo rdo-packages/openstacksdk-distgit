@@ -26,8 +26,8 @@ A collection of libraries for building applications to work with OpenStack \
 clouds - test files
 
 Name:           python-%{pypi_name}
-Version:        0.36.0
-Release:        2%{?dist}
+Version:        0.36.1
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
@@ -171,6 +171,9 @@ PYTHON=python%{pyver} stestr-%{pyver} --test-path ./openstack/tests/unit run --b
 %endif
 
 %changelog
+* Fri Feb 07 2020 RDO <dev@lists.rdoproject.org> 0.36.1-1
+- Update to 0.36.1
+
 * Wed Oct 02 2019 Joel Capitao <jcapitao@redhat.com> 0.36.0-2
 - Removed python2 subpackages in no el7 distros
 
