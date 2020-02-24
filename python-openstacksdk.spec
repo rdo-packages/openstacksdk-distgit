@@ -171,3 +171,4 @@ PYTHON=python%{pyver} stestr-%{pyver} --test-path ./openstack/tests/unit run --b
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/openstacksdk/commit/?id=ce3646fa2708cc36bda8b73b9ae0fbadf690c903
