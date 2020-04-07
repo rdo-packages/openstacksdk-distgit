@@ -146,6 +146,7 @@ rm -rf html/.{doctrees,buildinfo}
 %{pyver_install}
 
 %check
+rm -f ./openstack/tests/unit/test_hacking.py
 export OS_STDOUT_CAPTURE=true
 export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=20
