@@ -80,7 +80,7 @@ BuildRequires:  python%{pyver}-netifaces
 
 Requires:       python%{pyver}-cryptography >= 2.1
 Requires:       python%{pyver}-jsonpatch >= 1.16
-Requires:       python%{pyver}-keystoneauth1 >= 3.16.0
+Requires:       python%{pyver}-keystoneauth1 >= 3.18.0
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-pbr >= 2.0.0
 Requires:       python%{pyver}-appdirs
