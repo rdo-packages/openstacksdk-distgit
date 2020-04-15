@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -40,85 +29,68 @@ BuildRequires:  git
 %description
 %{common_desc}
 
-%package -n python%{pyver}-%{pypi_name}
+%package -n python3-%{pypi_name}
 Summary:        An SDK for building applications to work with OpenStack
-%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
+%{?python_provide:%python_provide python3-%{pypi_name}}
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr >= 2.0.0
-BuildRequires:  python%{pyver}-keystoneauth1
-BuildRequires:  python%{pyver}-appdirs
-BuildRequires:  python%{pyver}-requestsexceptions
-BuildRequires:  python%{pyver}-munch
-BuildRequires:  python%{pyver}-jmespath
-BuildRequires:  python%{pyver}-jsonschema
-BuildRequires:  python%{pyver}-os-service-types
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr >= 2.0.0
+BuildRequires:  python3-keystoneauth1
+BuildRequires:  python3-appdirs
+BuildRequires:  python3-requestsexceptions
+BuildRequires:  python3-munch
+BuildRequires:  python3-jmespath
+BuildRequires:  python3-jsonschema
+BuildRequires:  python3-os-service-types
 # Test requirements
-BuildRequires:  python%{pyver}-iso8601 >= 0.1.11
-BuildRequires:  python%{pyver}-jsonpatch >= 1.16
-BuildRequires:  python%{pyver}-subunit
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-oslo-config
-BuildRequires:  python%{pyver}-stestr
-BuildRequires:  python%{pyver}-mock
-BuildRequires:  python%{pyver}-testrepository
-BuildRequires:  python%{pyver}-testscenarios
-BuildRequires:  python%{pyver}-testtools
-BuildRequires:  python%{pyver}-requests-mock
-BuildRequires:  python%{pyver}-dogpile-cache
-BuildRequires:  python%{pyver}-ddt
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:  python-decorator
-BuildRequires:  python-ipaddress
-BuildRequires:  python-netifaces
-BuildRequires:  python-futures
-%else
-BuildRequires:  python%{pyver}-decorator
-BuildRequires:  python%{pyver}-netifaces
-%endif
+BuildRequires:  python3-iso8601 >= 0.1.11
+BuildRequires:  python3-jsonpatch >= 1.16
+BuildRequires:  python3-subunit
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-stestr
+BuildRequires:  python3-mock
+BuildRequires:  python3-testrepository
+BuildRequires:  python3-testscenarios
+BuildRequires:  python3-testtools
+BuildRequires:  python3-requests-mock
+BuildRequires:  python3-dogpile-cache
+BuildRequires:  python3-ddt
+BuildRequires:  python3-decorator
+BuildRequires:  python3-netifaces
 
-Requires:       python%{pyver}-cryptography >= 2.1
-Requires:       python%{pyver}-jsonpatch >= 1.16
-Requires:       python%{pyver}-keystoneauth1 >= 3.18.0
-Requires:       python%{pyver}-six
-Requires:       python%{pyver}-pbr >= 2.0.0
-Requires:       python%{pyver}-appdirs
-Requires:       python%{pyver}-requestsexceptions >= 1.2.0
-Requires:       python%{pyver}-munch
-Requires:       python%{pyver}-jmespath
-Requires:       python%{pyver}-iso8601
-Requires:       python%{pyver}-os-service-types >= 1.7.0
-Requires:       python%{pyver}-dogpile-cache
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:       python-decorator
-Requires:       python-ipaddress
-Requires:       python-netifaces
-Requires:       python-futures
-Requires:       PyYAML
-%else
-Requires:       python%{pyver}-decorator
-Requires:       python%{pyver}-netifaces
-Requires:       python%{pyver}-PyYAML
-%endif
+Requires:       python3-cryptography >= 2.1
+Requires:       python3-jsonpatch >= 1.16
+Requires:       python3-keystoneauth1 >= 3.18.0
+Requires:       python3-six
+Requires:       python3-pbr >= 2.0.0
+Requires:       python3-appdirs
+Requires:       python3-requestsexceptions >= 1.2.0
+Requires:       python3-munch
+Requires:       python3-jmespath
+Requires:       python3-iso8601
+Requires:       python3-os-service-types >= 1.7.0
+Requires:       python3-dogpile-cache
+Requires:       python3-decorator
+Requires:       python3-netifaces
+Requires:       python3-PyYAML
 
-%description -n python%{pyver}-%{pypi_name}
+%description -n python3-%{pypi_name}
 %{common_desc}
 
-%package -n python%{pyver}-%{pypi_name}-tests
+%package -n python3-%{pypi_name}-tests
 Summary:        An SDK for building applications to work with OpenStack - test files
 
-Requires: python%{pyver}-%{pypi_name} = %{version}-%{release}
+Requires: python3-%{pypi_name} = %{version}-%{release}
 
-%description -n python%{pyver}-%{pypi_name}-tests
+%description -n python3-%{pypi_name}-tests
 %{common_desc_tests}
 
 %if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        An SDK for building applications to work with OpenStack - documentation
-BuildRequires:  python%{pyver}-openstackdocstheme
-BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python3-openstackdocstheme
+BuildRequires:  python3-sphinx
 
 %description -n python-%{pypi_name}-doc
 A collection of libraries for building applications to work with OpenStack
@@ -133,17 +105,17 @@ rm -rf {,test-}requirements.txt
 rm -f openstack/tests/unit/test_stats.py
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build-%{pyver} -b html doc/source html
-# remove the sphinx-build-%{pyver} leftovers
+sphinx-build-3 -b html doc/source html
+# remove the sphinx-build-3 leftovers
 rm -rf html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{pyver_install}
+%{py3_install}
 
 %check
 rm -f ./openstack/tests/unit/test_hacking.py
@@ -152,18 +124,18 @@ export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=20
 # FIXME(jpena) we are skipping some unit tests due to
 # https://storyboard.openstack.org/#!/story/2005677
-PYTHON=python%{pyver} stestr-%{pyver} --test-path ./openstack/tests/unit run --black-regex '(test_wait_for_task_.*|.*TestOsServiceTypesVersion.*|.*test_timeout_and_failures_not_fail.*)'
+PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --black-regex '(test_wait_for_task_.*|.*TestOsServiceTypesVersion.*|.*test_timeout_and_failures_not_fail.*)'
 
-%files -n python%{pyver}-%{pypi_name}
+%files -n python3-%{pypi_name}
 %doc README.rst
 %license LICENSE
 %{_bindir}/openstack-inventory
-%{pyver_sitelib}/openstack
-%{pyver_sitelib}/%{pypi_name}-*.egg-info
-%exclude %{pyver_sitelib}/openstack/tests
+%{python3_sitelib}/openstack
+%{python3_sitelib}/%{pypi_name}-*.egg-info
+%exclude %{python3_sitelib}/openstack/tests
 
-%files -n python%{pyver}-%{pypi_name}-tests
-%{pyver_sitelib}/openstack/tests
+%files -n python3-%{pypi_name}-tests
+%{python3_sitelib}/openstack/tests
 
 %if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
