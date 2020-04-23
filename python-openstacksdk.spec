@@ -10,6 +10,8 @@
 %global pyver_build %{expand:%{py%{pyver}_build}}
 # End of macros for py2/py3 compatibility
 
+%global rhosp 0
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 # Disable docs until bs4 package is available
@@ -151,7 +153,12 @@ export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=20
 # FIXME(jpena) we are skipping some unit tests due to
 # https://storyboard.openstack.org/#!/story/2005677
-PYTHON=python%{pyver} stestr-%{pyver} --test-path ./openstack/tests/unit run --black-regex 'test_wait_for_task_'
+%if 0%{?rhosp} == 0
+export TEST_SKIP='test_wait_for_task_'
+%else
+export TEST_SKIP='test_wait_for_task_|test_create_unknown_proxy'
+%endif
+PYTHON=python%{pyver} stestr-%{pyver} --test-path ./openstack/tests/unit run --black-regex \'${TEST_SKIP}\'
 
 %files -n python%{pyver}-%{pypi_name}
 %doc README.rst
