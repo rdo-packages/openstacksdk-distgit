@@ -15,8 +15,8 @@ A collection of libraries for building applications to work with OpenStack \
 clouds - test files
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.46.0
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        ASL 2.0
@@ -144,3 +144,6 @@ PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --black-regex '(t
 %endif
 
 %changelog
+* Fri Apr 24 2020 RDO <dev@lists.rdoproject.org> 0.46.0-1
+- Update to 0.46.0
+
