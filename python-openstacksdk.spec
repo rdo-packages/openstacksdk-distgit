@@ -17,7 +17,7 @@ A collection of libraries for building applications to work with OpenStack \
 clouds - test files
 
 Name:           python-%{pypi_name}
-Version:        0.27.0
+Version:        0.27.1
 Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
@@ -244,6 +244,9 @@ stestr-3 --test-path ./openstack/tests/unit run
 %endif
 
 %changelog
+* Mon Jul 27 2020 RDO <dev@lists.rdoproject.org> 0.27.1-1
+- Update to 0.27.1
+
 * Fri Apr 05 2019 RDO <dev@lists.rdoproject.org> 0.27.0-1
 - Update to 0.27.0
 
