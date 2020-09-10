@@ -43,6 +43,7 @@ BuildRequires:  python3-jmespath
 BuildRequires:  python3-jsonschema
 BuildRequires:  python3-os-service-types
 # Test requirements
+BuildRequires:  python3-importlib-metadata
 BuildRequires:  python3-iso8601 >= 0.1.11
 BuildRequires:  python3-jsonpatch >= 1.16
 BuildRequires:  python3-subunit
@@ -60,6 +61,7 @@ BuildRequires:  python3-decorator
 BuildRequires:  python3-netifaces
 
 Requires:       python3-cryptography >= 2.1
+Requires:       python3-importlib-metadata >= 1.7.0
 Requires:       python3-jsonpatch >= 1.16
 Requires:       python3-keystoneauth1 >= 3.18.0
 Requires:       python3-six
