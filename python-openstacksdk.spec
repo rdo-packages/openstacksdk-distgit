@@ -60,11 +60,10 @@ BuildRequires:  python3-ddt
 BuildRequires:  python3-decorator
 BuildRequires:  python3-netifaces
 
-Requires:       python3-cryptography >= 2.1
+Requires:       python3-cryptography >= 2.7
 Requires:       python3-importlib-metadata >= 1.7.0
 Requires:       python3-jsonpatch >= 1.16
 Requires:       python3-keystoneauth1 >= 3.18.0
-Requires:       python3-six
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-appdirs
 Requires:       python3-requestsexceptions >= 1.2.0
