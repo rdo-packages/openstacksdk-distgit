@@ -24,7 +24,7 @@ URL:            http://www.openstack.org/
 Source0:        https://pypi.io/packages/source/o/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  git
+BuildRequires:  git-core
 
 %description
 %{common_desc}
