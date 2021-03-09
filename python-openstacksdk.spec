@@ -74,7 +74,7 @@ Requires:       python3-os-service-types >= 1.7.0
 Requires:       python3-dogpile-cache
 Requires:       python3-decorator
 Requires:       python3-netifaces
-Requires:       python3-PyYAML
+Requires:       python3-yaml >= 3.13
 
 %description -n python3-%{pypi_name}
 %{common_desc}
