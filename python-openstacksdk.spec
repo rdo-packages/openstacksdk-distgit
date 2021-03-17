@@ -43,7 +43,9 @@ BuildRequires:  python3-jmespath
 BuildRequires:  python3-jsonschema
 BuildRequires:  python3-os-service-types
 # Test requirements
+%if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
 BuildRequires:  python3-importlib-metadata
+%endif
 BuildRequires:  python3-iso8601 >= 0.1.11
 BuildRequires:  python3-jsonpatch >= 1.16
 BuildRequires:  python3-subunit
@@ -61,7 +63,9 @@ BuildRequires:  python3-decorator
 BuildRequires:  python3-netifaces
 
 Requires:       python3-cryptography >= 2.7
+%if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
 Requires:       python3-importlib-metadata >= 1.7.0
+%endif
 Requires:       python3-jsonpatch >= 1.16
 Requires:       python3-keystoneauth1 >= 3.18.0
 Requires:       python3-pbr >= 2.0.0
