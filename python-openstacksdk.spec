@@ -42,6 +42,7 @@ BuildRequires:  python3-munch
 BuildRequires:  python3-jmespath
 BuildRequires:  python3-jsonschema
 BuildRequires:  python3-os-service-types
+
 # Test requirements
 %if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
 BuildRequires:  python3-importlib-metadata
