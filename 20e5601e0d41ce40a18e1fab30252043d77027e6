@@ -16,6 +16,23 @@
       "message": "recheck depends-on already merged",
       "revId": "20e5601e0d41ce40a18e1fab30252043d77027e6",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3feb4af7_3045d243",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2022-05-30T03:31:39Z",
+      "side": 1,
+      "message": "just approving as already green in check and dummy commit",
+      "revId": "20e5601e0d41ce40a18e1fab30252043d77027e6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
