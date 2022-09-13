@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "540092f9_e12b801d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-13T10:29:54Z",
+      "side": 1,
+      "message": "We have 0.61.0 in zed-uc",
+      "revId": "d8bffd46e53176b596ee0ddc9231bee0518e4733",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
