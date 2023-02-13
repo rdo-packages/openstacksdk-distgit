@@ -130,7 +130,7 @@ export OS_STDERR_CAPTURE=true
 export OS_TEST_TIMEOUT=20
 # FIXME(jpena) we are skipping some unit tests due to
 # https://storyboard.openstack.org/#!/story/2005677
-PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --black-regex '(test_wait_for_task_.*|.*TestOsServiceTypesVersion.*|.*test_timeout_and_failures_not_fail.*)'
+PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --exclude-regex '(test_wait_for_task_.*|.*TestOsServiceTypesVersion.*|.*test_timeout_and_failures_not_fail.*)'
 
 %files -n python3-%{pypi_name}
 %doc README.rst
