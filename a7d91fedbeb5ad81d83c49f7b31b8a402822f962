@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0924d853_a94c2044",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-02-17T09:08:17Z",
+      "side": 0,
+      "message": "They are forking the fork! 😊 https://github.com/openstack/openstacksdk/commit/6e5f34dba55365805033694b7a01ea39e0072c99",
+      "range": {
+        "startLine": 75,
+        "startChar": 16,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "a7d91fedbeb5ad81d83c49f7b31b8a402822f962",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
