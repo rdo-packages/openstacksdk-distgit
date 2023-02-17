@@ -22,6 +22,30 @@
       },
       "revId": "a7d91fedbeb5ad81d83c49f7b31b8a402822f962",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5035ce1e_6f3946a3",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-02-17T14:04:14Z",
+      "side": 0,
+      "message": "😄 okk I didn\u0027t take time to understand the why of the removing.",
+      "parentUuid": "0924d853_a94c2044",
+      "range": {
+        "startLine": 75,
+        "startChar": 16,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "a7d91fedbeb5ad81d83c49f7b31b8a402822f962",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
