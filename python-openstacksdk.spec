@@ -72,7 +72,6 @@ Requires:       python3-keystoneauth1 >= 3.18.0
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-appdirs
 Requires:       python3-requestsexceptions >= 1.2.0
-Requires:       python3-munch
 Requires:       python3-jmespath
 Requires:       python3-iso8601
 Requires:       python3-os-service-types >= 1.7.0
