@@ -34,6 +34,24 @@
       "parentUuid": "6cf23f54_f2404f98",
       "revId": "c10bac1007225281e9aa02edd5c9b6d117dae723",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "595ca433_8f7dbad5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-02-28T09:36:30Z",
+      "side": 1,
+      "message": "It\u0027s now in u-c since https://review.rdoproject.org/r/c/rdoinfo/+/47216",
+      "parentUuid": "dcf4ffde_c47e6dea",
+      "revId": "c10bac1007225281e9aa02edd5c9b6d117dae723",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
