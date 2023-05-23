@@ -53,7 +53,6 @@ BuildRequires:  python3-subunit
 BuildRequires:  python3-oslotest
 BuildRequires:  python3-oslo-config
 BuildRequires:  python3-stestr
-BuildRequires:  python3-mock
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
