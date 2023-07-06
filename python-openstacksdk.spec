@@ -1,5 +1,11 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order statsd
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 
 # Disable docs until bs4 package is available
 %global with_doc 0
@@ -19,7 +25,7 @@ Version:        XXX
 Release:        XXX
 Summary:        An SDK for building applications to work with OpenStack
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            http://www.openstack.org/
 Source0:        https://pypi.io/packages/source/o/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
@@ -31,54 +37,9 @@ BuildRequires:  git-core
 
 %package -n python3-%{pypi_name}
 Summary:        An SDK for building applications to work with OpenStack
-%{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr >= 2.0.0
-BuildRequires:  python3-keystoneauth1
-BuildRequires:  python3-appdirs
-BuildRequires:  python3-requestsexceptions
-BuildRequires:  python3-munch
-BuildRequires:  python3-jmespath
-BuildRequires:  python3-jsonschema
-BuildRequires:  python3-os-service-types
-
-# Test requirements
-%if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
-BuildRequires:  python3-importlib-metadata
-%endif
-BuildRequires:  python3-iso8601 >= 0.1.11
-BuildRequires:  python3-jsonpatch >= 1.16
-BuildRequires:  python3-subunit
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-oslo-config
-BuildRequires:  python3-stestr
-BuildRequires:  python3-testrepository
-BuildRequires:  python3-testscenarios
-BuildRequires:  python3-testtools
-BuildRequires:  python3-requests-mock
-BuildRequires:  python3-dogpile-cache
-BuildRequires:  python3-ddt
-BuildRequires:  python3-decorator
-BuildRequires:  python3-netifaces
-
-Requires:       python3-cryptography >= 2.7
-%if (0%{?fedora} && 0%{?fedora} < 32) || (0%{?rhel} && 0%{?rhel} < 9)
-Requires:       python3-importlib-metadata >= 1.7.0
-%endif
-Requires:       python3-jsonpatch >= 1.16
-Requires:       python3-keystoneauth1 >= 3.18.0
-Requires:       python3-pbr >= 2.0.0
-Requires:       python3-appdirs
-Requires:       python3-requestsexceptions >= 1.2.0
-Requires:       python3-jmespath
-Requires:       python3-iso8601
-Requires:       python3-os-service-types >= 1.7.0
-Requires:       python3-dogpile-cache
-Requires:       python3-decorator
-Requires:       python3-netifaces
-Requires:       python3-yaml >= 3.13
-
+BuildRequires:  pyproject-rpm-macros
 %description -n python3-%{pypi_name}
 %{common_desc}
 
@@ -93,9 +54,6 @@ Requires: python3-%{pypi_name} = %{version}-%{release}
 %if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        An SDK for building applications to work with OpenStack - documentation
-BuildRequires:  python3-openstackdocstheme
-BuildRequires:  python3-sphinx
-
 %description -n python-%{pypi_name}-doc
 A collection of libraries for building applications to work with OpenStack
 clouds - documentation.
@@ -103,39 +61,54 @@ clouds - documentation.
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
-# Let RPM handle the requirements
-rm -rf {,test-}requirements.txt
 # This unit test requires python-prometheus, which is optional and not needed
 rm -f openstack/tests/unit/test_stats.py
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
+
 %build
-%{py3_build}
+%pyproject_wheel
 
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build-3 -b html doc/source html
+%tox -e docs
 # remove the sphinx-build-3 leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 
 %check
 rm -f ./openstack/tests/unit/test_hacking.py
-export OS_STDOUT_CAPTURE=true
-export OS_STDERR_CAPTURE=true
-export OS_TEST_TIMEOUT=20
-# FIXME(jpena) we are skipping some unit tests due to
-# https://storyboard.openstack.org/#!/story/2005677
-PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --exclude-regex '(test_wait_for_task_.*|.*TestOsServiceTypesVersion.*|.*test_timeout_and_failures_not_fail.*)'
+%tox -e %{default_toxenv}
 
 %files -n python3-%{pypi_name}
 %doc README.rst
 %license LICENSE
 %{_bindir}/openstack-inventory
 %{python3_sitelib}/openstack
-%{python3_sitelib}/%{pypi_name}-*.egg-info
+%{python3_sitelib}/%{pypi_name}-*.dist-info
 %exclude %{python3_sitelib}/openstack/tests
 
 %files -n python3-%{pypi_name}-tests
@@ -143,7 +116,7 @@ PYTHON=python3 stestr-3 --test-path ./openstack/tests/unit run --exclude-regex '
 
 %if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 %endif
 
