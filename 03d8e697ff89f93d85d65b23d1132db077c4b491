@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04fb5b89_4e0c2fec",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2023-07-07T09:49:07Z",
+      "side": 1,
+      "message": "is this test still unavailable?",
+      "revId": "03d8e697ff89f93d85d65b23d1132db077c4b491",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
