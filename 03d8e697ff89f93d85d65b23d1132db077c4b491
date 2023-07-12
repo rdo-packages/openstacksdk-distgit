@@ -34,6 +34,24 @@
       "parentUuid": "04fb5b89_4e0c2fec",
       "revId": "03d8e697ff89f93d85d65b23d1132db077c4b491",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "622e5f8f_982a0b9e",
+        "filename": "python-openstacksdk.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-12T09:46:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26affa1c_637111e9",
+      "revId": "03d8e697ff89f93d85d65b23d1132db077c4b491",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
