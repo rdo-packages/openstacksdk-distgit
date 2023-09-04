@@ -21,8 +21,8 @@ A collection of libraries for building applications to work with OpenStack \
 clouds - test files
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
 License:        Apache-2.0
@@ -121,3 +121,6 @@ rm -f ./openstack/tests/unit/test_hacking.py
 %endif
 
 %changelog
+* Mon Sep 04 2023 RDO <dev@lists.rdoproject.org> 1.5.0-1
+- Update to 1.5.0
+
