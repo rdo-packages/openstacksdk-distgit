@@ -21,7 +21,7 @@ A collection of libraries for building applications to work with OpenStack \
 clouds - test files
 
 Name:           python-%{pypi_name}
-Version:        4.0.0
+Version:        4.0.1
 Release:        1%{?dist}
 Summary:        An SDK for building applications to work with OpenStack
 
@@ -121,6 +121,9 @@ rm -f ./openstack/tests/unit/test_hacking.py
 %endif
 
 %changelog
+* Wed Nov 06 2024 RDO <dev@lists.rdoproject.org> 4.0.1-1
+- Update to 4.0.1
+
 * Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 4.0.0-1
 - Update to 4.0.0
 
