@@ -121,3 +121,4 @@ rm -f ./openstack/tests/unit/test_hacking.py
 %endif
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/openstacksdk/commit/d2c65741211174b2dd086ad10e5c3afd96d3df7d
